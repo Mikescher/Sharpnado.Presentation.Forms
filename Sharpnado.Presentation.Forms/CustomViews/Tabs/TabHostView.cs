@@ -289,20 +289,20 @@ namespace Sharpnado.Presentation.Forms.CustomViews.Tabs
 
         private void AddTapCommand(TabItem tabItem)
         {
-            if (Device.RuntimePlatform == Device.UWP)
+            //if (Device.RuntimePlatform == Device.UWP)
             {
                 tabItem.GestureRecognizers.Add(
                     new TapGestureRecognizer() { Command = TabItemTappedCommand, CommandParameter = tabItem });
             }
-            else
-            {
-                ViewEffect.SetTouchFeedbackColor(tabItem, tabItem.SelectedTabColor);
-                TapCommandEffect.SetTap(tabItem, TabItemTappedCommand);
-                TapCommandEffect.SetTapParameter(tabItem, tabItem);
-
-                tabItem.Effects.Add(new ViewStyleEffect());
-                tabItem.Effects.Add(new TapCommandRoutingEffect());
-            }
+            //else
+            //{
+            //    ViewEffect.SetTouchFeedbackColor(tabItem, tabItem.SelectedTabColor);
+            //    TapCommandEffect.SetTap(tabItem, TabItemTappedCommand);
+            //    TapCommandEffect.SetTapParameter(tabItem, tabItem);
+			//
+            //    tabItem.Effects.Add(new ViewStyleEffect());
+            //    tabItem.Effects.Add(new TapCommandRoutingEffect());
+            //}
         }
 
         private void OnChildAdded(TabItem tabItem)
